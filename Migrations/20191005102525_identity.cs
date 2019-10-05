@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Dobo_Web.Migrations
 {
-    public partial class AddingIdentity : Migration
+    public partial class identity : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,9 +11,9 @@ namespace Dobo_Web.Migrations
                 name: "AspNetRoles",
                 columns: table => new
                 {
-                    Id = table.Column<string>(nullable: false),
+                    Id = table.Column<string>(maxLength: 85, nullable: false),
                     Name = table.Column<string>(maxLength: 256, nullable: true),
-                    NormalizedName = table.Column<string>(maxLength: 256, nullable: true),
+                    NormalizedName = table.Column<string>(maxLength: 85, nullable: true),
                     ConcurrencyStamp = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
@@ -25,11 +25,11 @@ namespace Dobo_Web.Migrations
                 name: "AspNetUsers",
                 columns: table => new
                 {
-                    Id = table.Column<string>(nullable: false),
+                    Id = table.Column<string>(maxLength: 85, nullable: false),
                     UserName = table.Column<string>(maxLength: 256, nullable: true),
-                    NormalizedUserName = table.Column<string>(maxLength: 256, nullable: true),
+                    NormalizedUserName = table.Column<string>(maxLength: 85, nullable: true),
                     Email = table.Column<string>(maxLength: 256, nullable: true),
-                    NormalizedEmail = table.Column<string>(maxLength: 256, nullable: true),
+                    NormalizedEmail = table.Column<string>(maxLength: 85, nullable: true),
                     EmailConfirmed = table.Column<short>(nullable: false),
                     PasswordHash = table.Column<string>(nullable: true),
                     SecurityStamp = table.Column<string>(nullable: true),
@@ -50,9 +50,9 @@ namespace Dobo_Web.Migrations
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(maxLength: 85, nullable: false)
                         .Annotation("MySQL:AutoIncrement", true),
-                    RoleId = table.Column<string>(nullable: false),
+                    RoleId = table.Column<string>(maxLength: 85, nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
                 },
@@ -71,9 +71,9 @@ namespace Dobo_Web.Migrations
                 name: "AspNetUserClaims",
                 columns: table => new
                 {
-                    Id = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(maxLength: 85, nullable: false)
                         .Annotation("MySQL:AutoIncrement", true),
-                    UserId = table.Column<string>(nullable: false),
+                    UserId = table.Column<string>(maxLength: 85, nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
                     ClaimValue = table.Column<string>(nullable: true)
                 },
@@ -92,10 +92,10 @@ namespace Dobo_Web.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(nullable: false),
-                    ProviderKey = table.Column<string>(nullable: false),
+                    LoginProvider = table.Column<string>(maxLength: 85, nullable: false),
+                    ProviderKey = table.Column<string>(maxLength: 85, nullable: false),
                     ProviderDisplayName = table.Column<string>(nullable: true),
-                    UserId = table.Column<string>(nullable: false)
+                    UserId = table.Column<string>(maxLength: 85, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -112,8 +112,8 @@ namespace Dobo_Web.Migrations
                 name: "AspNetUserRoles",
                 columns: table => new
                 {
-                    UserId = table.Column<string>(nullable: false),
-                    RoleId = table.Column<string>(nullable: false)
+                    UserId = table.Column<string>(maxLength: 85, nullable: false),
+                    RoleId = table.Column<string>(maxLength: 85, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -136,9 +136,9 @@ namespace Dobo_Web.Migrations
                 name: "AspNetUserTokens",
                 columns: table => new
                 {
-                    UserId = table.Column<string>(nullable: false),
-                    LoginProvider = table.Column<string>(nullable: false),
-                    Name = table.Column<string>(nullable: false),
+                    UserId = table.Column<string>(maxLength: 85, nullable: false),
+                    LoginProvider = table.Column<string>(maxLength: 85, nullable: false),
+                    Name = table.Column<string>(maxLength: 85, nullable: false),
                     Value = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

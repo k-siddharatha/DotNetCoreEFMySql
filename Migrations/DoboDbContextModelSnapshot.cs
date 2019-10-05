@@ -19,7 +19,8 @@ namespace Dobo_Web.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(85);
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
@@ -28,7 +29,7 @@ namespace Dobo_Web.Migrations
                         .HasMaxLength(256);
 
                     b.Property<string>("NormalizedName")
-                        .HasMaxLength(256);
+                        .HasMaxLength(85);
 
                     b.HasKey("Id");
 
@@ -42,14 +43,16 @@ namespace Dobo_Web.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(85);
 
                     b.Property<string>("ClaimType");
 
                     b.Property<string>("ClaimValue");
 
                     b.Property<string>("RoleId")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(85);
 
                     b.HasKey("Id");
 
@@ -61,7 +64,8 @@ namespace Dobo_Web.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
                 {
                     b.Property<string>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(85);
 
                     b.Property<int>("AccessFailedCount");
 
@@ -78,10 +82,10 @@ namespace Dobo_Web.Migrations
                     b.Property<DateTimeOffset?>("LockoutEnd");
 
                     b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256);
+                        .HasMaxLength(85);
 
                     b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256);
+                        .HasMaxLength(85);
 
                     b.Property<string>("PasswordHash");
 
@@ -111,14 +115,16 @@ namespace Dobo_Web.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(85);
 
                     b.Property<string>("ClaimType");
 
                     b.Property<string>("ClaimValue");
 
                     b.Property<string>("UserId")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(85);
 
                     b.HasKey("Id");
 
@@ -130,14 +136,16 @@ namespace Dobo_Web.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(36);
+                        .HasMaxLength(85);
 
-                    b.Property<string>("ProviderKey");
+                    b.Property<string>("ProviderKey")
+                        .HasMaxLength(85);
 
                     b.Property<string>("ProviderDisplayName");
 
                     b.Property<string>("UserId")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(85);
 
                     b.HasKey("LoginProvider", "ProviderKey");
 
@@ -148,9 +156,11 @@ namespace Dobo_Web.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
                 {
-                    b.Property<string>("UserId");
+                    b.Property<string>("UserId")
+                        .HasMaxLength(85);
 
-                    b.Property<string>("RoleId");
+                    b.Property<string>("RoleId")
+                        .HasMaxLength(85);
 
                     b.HasKey("UserId", "RoleId");
 
@@ -161,11 +171,14 @@ namespace Dobo_Web.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.Property<string>("UserId");
+                    b.Property<string>("UserId")
+                        .HasMaxLength(85);
 
-                    b.Property<string>("LoginProvider");
+                    b.Property<string>("LoginProvider")
+                        .HasMaxLength(85);
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasMaxLength(85);
 
                     b.Property<string>("Value");
 
